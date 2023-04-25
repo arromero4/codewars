@@ -1,4 +1,4 @@
-/*
+"""
 Create the function prefill that returns an array of n elements that all have the same value v. See if you can do this without using a loop.
 
 You have to validate input:
@@ -22,12 +22,18 @@ Code Examples
       
     prefill("xyz", 1)
       --> throws TypeError with message "xyz is invalid"
-*/
 
-function prefill(n, v) {
-    if (isNaN(parseInt(n)) || parseInt(n) < 0 || n % 1 !== 0) {
-        throw new TypeError(`${n} is invalid`);
-      }
-  
-      return Array(parseInt(n)).fill(v);
-  }
+"""
+
+def prefill(n,v = None):
+    #your code here
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        raise TypeError(f"{n} is invalid")
+    if n < 0:
+        raise TypeError(f"{n} is invalid")
+
+    return [v] * n if v is not None else [None] * n
+
+
