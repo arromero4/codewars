@@ -15,6 +15,14 @@ Examples
 "1"    =>  NULL
 "1,2"  =>  NULL
 """
+#Option 1
 def array(string):
     #your code here
     return ' '.join(string.split(',')[1:-1]) if len(string.split(',')) > 2 else None
+#Option 2
+def array(string):
+    #your code here
+    if len(string.split(',')) > 2:
+        return ' '.join(string.split(',')[1:-1])
+    else:
+        return None
