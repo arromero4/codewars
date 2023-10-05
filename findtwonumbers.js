@@ -24,3 +24,18 @@ var diagonalSum = function (mat) {
     }
     return rsum + lsum;
   };
+
+  var diagonalSum = function(mat) {
+    if (mat.length !== mat[0].length) return;
+
+    let sum = 0;
+    let n = mat.length;
+
+    for (let i = 0; i < n; i++) {
+        sum += mat[i][i] + mat[i][n-i-1];
+    }
+    let mid = Math.floor(n / 2);
+    if (n % 2 == 1) sum -= mat[mid][mid];
+
+    return sum;
+};
